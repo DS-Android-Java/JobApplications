@@ -32,7 +32,6 @@
             android:layout_column="0"
             android:layout_marginLeft="10dp"
             android:text="@string/userName"
-            android:textColor="#fff"
             android:fontFamily="@font/coolveticarg"
             android:textSize="16sp" />
 
@@ -45,7 +44,6 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/userName"
-            android:textColor="#fff"
             android:inputType="textPersonName"
             android:textSize="17sp" />
     </TableRow>
@@ -60,7 +58,6 @@
             android:layout_column="0"
             android:layout_marginLeft="10dp"
             android:text="@string/password"
-            android:textColor="#fff"
             android:fontFamily="@font/coolveticarg"
             android:textSize="16sp" />
 
@@ -73,7 +70,6 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/password"
-            android:textColor="#fff"
             android:inputType="textPassword"
             android:textSize="17sp" />
     </TableRow>

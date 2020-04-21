@@ -77,7 +77,6 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/coolveticarg"
                 android:text="Full Name"
-                android:textColor="#fff"
                 android:textSize="13dp"/>
 
             <LinearLayout
@@ -99,7 +98,6 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:textColor="#fff"
                         android:textSize="13sp" />
 
                     <TextView
@@ -109,7 +107,6 @@
                         android:layout_marginLeft="3dp"
                         android:layout_weight="1"
                         android:text="First Name"
-                        android:textColor="#fff"
                         android:textSize="10sp" />
                 </LinearLayout>
 
@@ -125,7 +122,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:textColor="#fff"
                         android:inputType="textPersonName"
                         android:textSize="13sp" />
 
@@ -136,7 +132,6 @@
                         android:layout_marginLeft="3dp"
                         android:layout_weight="1"
                         android:text="Last Name"
-                        android:textColor="#fff"
                         android:textSize="10sp" />
                 </LinearLayout>
 
@@ -160,7 +155,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvCA"
-                android:textColor="#fff"
                 android:textSize="13dp"/>
 
             <LinearLayout
@@ -176,7 +170,6 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:textColor="#fff"
                     android:textSize="13dp" />
 
                 <TextView
@@ -185,8 +178,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
                     android:text="Street Address"
-                    android:textSize="10sp"
-                    android:textColor="#fff"/>
+                    android:textSize="10sp"/>
 
                 <EditText
                     android:id="@+id/etStreetAddress2"
@@ -196,8 +188,7 @@
                     android:layout_marginRight="40dp"
                     android:ems="10"
                     android:inputType="textPersonName"
-                    android:textSize="13sp"
-                    android:textColor="#fff"/>
+                    android:textSize="13sp"/>
 
                 <TextView
                     android:id="@+id/tvStreetAddress2"
@@ -205,8 +196,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
                     android:text="Street Address Line 2"
-                    android:textSize="10sp"
-                    android:textColor="#fff"/>
+                    android:textSize="10sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -228,8 +218,7 @@
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
-                            android:textSize="13sp"
-                            android:textColor="#fff"/>
+                            android:textSize="13sp"/>
 
                         <TextView
                             android:id="@+id/tvCity"
@@ -238,8 +227,7 @@
                             android:layout_marginLeft="3dp"
                             android:layout_weight="1"
                             android:text="City"
-                            android:textSize="10sp"
-                            android:textColor="#fff"/>
+                            android:textSize="10sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -255,8 +243,7 @@
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
-                            android:textSize="13sp"
-                            android:textColor="#fff"/>
+                            android:textSize="13sp"/>
 
                         <TextView
                             android:id="@+id/tvState"
@@ -265,8 +252,7 @@
                             android:layout_marginLeft="3dp"
                             android:layout_weight="1"
                             android:text="State / Province"
-                            android:textSize="10sp"
-                            android:textColor="#fff"/>
+                            android:textSize="10sp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -291,8 +277,7 @@
                             android:layout_weight="1"
                             android:ems="10"
                             android:inputType="textPersonName"
-                            android:textSize="13sp"
-                            android:textColor="#fff"/>
+                            android:textSize="13sp"/>
 
                         <TextView
                             android:id="@+id/tvPostalCode"
@@ -301,8 +286,7 @@
                             android:layout_marginLeft="3dp"
                             android:layout_weight="1"
                             android:text="Postal / Zip Code "
-                            android:textSize="10sp"
-                            android:textColor="#fff"/>
+                            android:textSize="10sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -326,8 +310,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_weight="1"
                             android:text="Country"
-                            android:textSize="10sp"
-                            android:textColor="#fff"/>
+                            android:textSize="10sp"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -348,8 +331,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Email "
-                android:textColor="#fff"/>
+                android:text="Email "/>
 
             <EditText
                 android:id="@+id/etEmail"
@@ -360,8 +342,7 @@
                 android:gravity="center_horizontal"
                 android:hint="username@mail.com"
                 android:inputType="textEmailAddress"
-                android:textSize="13sp"
-                android:textColor="#fff"/>
+                android:textSize="13sp"/>
         </TableRow>
 
         <TableRow
@@ -380,8 +361,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="@string/tvPN"
-                android:textSize="13dp"
-                android:textColor="#fff"/>
+                android:textSize="13dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -402,8 +382,7 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:textSize="13sp"
-                        android:textColor="#fff"/>
+                        android:textSize="13sp"/>
 
                     <TextView
                         android:id="@+id/tvAreaCode"
@@ -412,8 +391,7 @@
                         android:layout_marginLeft="3dp"
                         android:layout_weight="1"
                         android:text="Area Code"
-                        android:textSize="10sp"
-                        android:textColor="#fff"/>
+                        android:textSize="10sp"/>
 
                 </LinearLayout>
 
@@ -431,8 +409,7 @@
                         android:ems="10"
                         android:layout_marginRight="30dp"
                         android:inputType="number"
-                        android:textSize="13sp"
-                        android:textColor="#fff"/>
+                        android:textSize="13sp"/>
 
                     <TextView
                         android:id="@+id/tvPhoneNumber"
@@ -441,8 +418,7 @@
                         android:layout_marginLeft="3dp"
                         android:layout_weight="1"
                         android:text="Phone Number "
-                        android:textSize="10sp"
-                        android:textColor="#fff"/>
+                        android:textSize="10sp"/>
 
                 </LinearLayout>
 
@@ -465,8 +441,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tvAP"
-                android:textSize="13dp"
-                android:textColor="#fff"/>
+                android:textSize="13dp"/>
 
             <Spinner
                 android:id="@+id/spinnerAP"
@@ -489,8 +464,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tvSD"
-                android:textSize="13dp"
-                android:textColor="#fff"/>
+                android:textSize="13dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -508,8 +482,7 @@
                     android:hint="@string/etDatePicker"
                     android:inputType="date"
                     android:maxLines="1"
-                    android:textSize="13dp"
-                    android:textColor="#fff"/>
+                    android:textSize="13dp"/>
 
             </LinearLayout>
 
@@ -530,8 +503,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tvUR"
-                android:textSize="13dp"
-                android:textColor="#fff"/>
+                android:textSize="13dp"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
