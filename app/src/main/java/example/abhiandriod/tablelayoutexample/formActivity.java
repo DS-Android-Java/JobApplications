@@ -2,10 +2,15 @@ package example.abhiandriod.tablelayoutexample;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,10 +29,22 @@ public class formActivity extends AppCompatActivity {
     private Spinner spinnerAP;
     private Button btnUpload;
     private EditText etDatePicker;
+    private Window window;
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
+
+        String primaryDark = "#ca161e";
+        String primary = "#b8141b";
+        String background = "#b8141b";
+
+        this.window = getWindow();
+        window.setStatusBarColor(Color.parseColor(primaryDark));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor(primary)));
+
 
         ArrayList<String> paises = new ArrayList<>();
         paises.add("Costa Rica");
