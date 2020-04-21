@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">TableLayoutExample</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="loginForm">Login Form</string>
+    <string name="userName">UserName</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+
+
+
+    <string name="tvT">Job Application</string>
+    <string name="tvDescrip">Complete the form to join us.</string>
+    <string name="tvN">Full name</string>
+    <string name="etN">Name</string>
+    <string name="tvCA">Current Address</string>
+    <string name="etCA">Address</string>
+    <string name="etCA2">Address 2</string>
+    <string name="tvEA">Email</string>
+    <string name="etEA">user@email.com</string>
+    <string name="tvPN">Phone Number</string>
+    <string name="etPN">+506 88888888</string>
+    <string name="etC">City</string>
+    <string name="etP">State</string>
+    <string name="etPC">Postal C</string>
+    <string name="tvAP">Applying for Position</string>
+    <string name="tvSD">Start date</string>
+    <string name="etSD">MM-DD-YYYY</string>
+    <string name="tvUR">Upload Resume</string>
+    <string name="btnUpload">Upload a File</string>
+    <string name="etDatePicker">Fecha</string>
+</resources>
