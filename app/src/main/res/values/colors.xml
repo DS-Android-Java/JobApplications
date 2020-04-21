@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ca161e</color>
+    <color name="colorPrimaryDark">#b8141b</color>
+    <color name="colorAccent">#b8141b</color>
+    <color name="bg_row_background">#b8141b</color>
+    <color name="item_name">#535353</color>
+    <color name="description">#a9a9a9</color>
+</resources>
+
