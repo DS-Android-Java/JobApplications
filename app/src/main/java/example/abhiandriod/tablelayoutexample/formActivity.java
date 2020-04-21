@@ -37,8 +37,8 @@ public class formActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form);
 
-        String primaryDark = "#ca161e";
-        String primary = "#b8141b";
+        String primaryDark = "#3791a4";
+        String primary = "#1fa1bc";
         String background = "#b8141b";
 
         this.window = getWindow();

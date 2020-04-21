@@ -10,7 +10,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_gradient_login"
+        android:background="#5e777d"
         android:isScrollContainer="true"
         android:orientation="vertical"
         android:stretchColumns="*"
@@ -65,8 +65,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            android:background="@drawable/cajat">
 
             <TextView
                 android:id="@+id/tvFullName"
@@ -148,7 +150,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/cajat"
+            android:padding="5dp">
 
             <TextView
                 android:id="@+id/tvDireccion"
@@ -335,7 +339,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:background="@drawable/cajat">
 
             <TextView
                 android:id="@+id/tvEmail"
@@ -363,8 +369,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            android:background="@drawable/cajat">
 
             <TextView
                 android:id="@+id/tvTelefono"
@@ -448,7 +456,9 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="5dp"
+            android:padding="5dp"
+            android:background="@drawable/cajat">
 
             <TextView
                 android:id="@+id/tvPuesto"
@@ -469,8 +479,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:background="@drawable/cajat">
 
             <TextView
                 android:id="@+id/tvFecha"
@@ -508,9 +520,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="40dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:background="@drawable/cajat">
 
             <TextView
                 android:id="@+id/tvBtnCv"

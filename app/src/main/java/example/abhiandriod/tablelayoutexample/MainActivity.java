@@ -13,7 +13,13 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import java.util.List;
+
+import example.abhiandriod.tablelayoutexample.accesodatos.ModelData;
+import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,11 +35,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // initiate a button
         loginButton = (Button) findViewById(R.id.loginBtn);//Primero casting con el boton
-        username = (EditText)findViewById(R.id.userName);
-        password = (EditText)findViewById(R.id.password);
+        username = (EditText) findViewById(R.id.userName);
+        password = (EditText) findViewById(R.id.password);
 
-        String primaryDark = "#ca161e";
-        String primary = "#b8141b";
+        String primaryDark = "#3791a4";
+        String primary = "#1fa1bc";
         String background = "#b8141b";
 
         this.window = getWindow();
@@ -49,19 +55,31 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void valida(){
-        if(username.getText().toString().equals("") || password.getText().toString().equals("")){
-            Toast.makeText(this,"You must complete all the fields", Toast.LENGTH_LONG).show();
-        }else{
-            if(!username.getText().toString().contains("@")){
-                Toast.makeText(this,"The user must be a email", Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(this,"Validating", Toast.LENGTH_LONG).show();
-                Intent i = new Intent(this,formActivity.class);
-                startActivity(i);
+    public void valida() {
+        ModelData md = new ModelData();
+        List<Usuario> users = md.InitUsuarios();
+        Boolean founded = false;
+
+        if (username.getText().toString().equals("") || password.getText().toString().equals("")) {
+            Toast.makeText(this, "You must complete all the fields", Toast.LENGTH_LONG).show();
+        } else {
+            if (!username.getText().toString().contains("@")) {
+                Toast.makeText(this, "The user must be a email", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(this, "Validating", Toast.LENGTH_LONG).show();
+                for (Usuario u : users) {
+                    if (u.getUsuario().equals(username.getText().toString()) && u.getClave().equals(password.getText().toString())) {
+                        founded = true;
+                    }
+                }
+                if(founded == false){
+                    Toast.makeText(this, "The username or password are incorrect", Toast.LENGTH_LONG).show();
+                }else{
+                    Intent i = new Intent(this, formActivity.class);
+                    startActivity(i);
+                }
             }
         }
     }
-
 
 }
