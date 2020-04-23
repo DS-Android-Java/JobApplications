@@ -8,8 +8,17 @@ import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 public class ModelData {
     private List<Usuario> usuarios;
 
-    public ModelData() {
-        usuarios = new ArrayList<>();
+    private static ModelData modelData;
+
+    private ModelData() {
+        usuarios = InitUsuarios();//Se cargan los usuarios
+    }
+
+    public static ModelData getInstance(){
+        if(modelData == null){
+            modelData = new ModelData();
+        }
+        return modelData;
     }
 
     public List<Usuario> InitUsuarios(){

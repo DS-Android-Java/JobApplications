@@ -24,9 +24,11 @@ import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 public class MainActivity extends AppCompatActivity {
 
     private Button loginButton;
+    private Button registerBtn;
     private EditText username;
     private EditText password;
     private Window window;
+    private ModelData modelData = ModelData.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // initiate a button
         loginButton = (Button) findViewById(R.id.loginBtn);//Primero casting con el boton
+        registerBtn = (Button) findViewById(R.id.registerBtn);
         username = (EditText) findViewById(R.id.userName);
         password = (EditText) findViewById(R.id.password);
 
@@ -53,12 +56,23 @@ public class MainActivity extends AppCompatActivity {
                 valida();
             }
         });
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                registration();
+            }
+        });
     }
 
+    public void registration(){
+        Intent i = new Intent(this, RegistrationForm.class);
+        startActivity(i);
+    }
     public void valida() {
-        ModelData md = new ModelData();
+        //ModelData md = new ModelData();
         Usuario userSingin = new Usuario();
-        List<Usuario> users = md.InitUsuarios();
+        List<Usuario> users = modelData.getUsuarios();
         Boolean founded = false;
 
         if (username.getText().toString().equals("") || password.getText().toString().equals("")) {

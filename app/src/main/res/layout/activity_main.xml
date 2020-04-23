@@ -79,9 +79,28 @@
             android:id="@+id/loginBtn"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_width="match_parent"
             android:layout_span="2"
             android:background="@drawable/btn_login"
+            android:paddingHorizontal="40dp"
             android:text="@string/login"
+            android:textColor="@drawable/txt_btn_login"
+            android:textSize="25sp"
+            android:fontFamily="@font/coolveticarg"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+    </TableRow>
+    <TableRow android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_span="2"
+            android:paddingHorizontal="30dp"
+            android:background="@drawable/btn_login"
+            android:text="@string/registerBtn"
             android:textColor="@drawable/txt_btn_login"
             android:textSize="25sp"
             android:fontFamily="@font/coolveticarg"
