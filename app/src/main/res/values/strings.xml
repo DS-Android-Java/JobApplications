@@ -27,7 +27,25 @@
     <string name="tvAP">Applying for Position</string>
     <string name="tvSD">Start date</string>
     <string name="etSD">MM-DD-YYYY</string>
-    <string name="tvUR">Upload Resume</string>
-    <string name="btnUpload">Upload a File</string>
-    <string name="etDatePicker">Fecha</string>
+    <string name="btnList">Sent</string>
+    <string name="btnUpload">Upload</string>
+    <string name="etDatePicker">Select the Date</string>
+    <string name="tvBtnCv">Upload Resume</string>
+
+    <string name="etFirstName">First Name</string>
+    <string name="etLastName">Last Name</string>
+    <string name="etStreetAddress">Street Address</string>
+    <string name="etStreetAddress2">Second Street Address</string>
+    <string name="etEmail">Email</string>
+    <string name="etAreaCode">Area Code</string>
+    <string name="etPhoneNumber">Phone Number</string>
+    <string name="spinnerAP">Position</string>
+    <string name="etCity">City</string>
+    <string name="etState">State/Province</string>
+    <string name="etPostalCode">Postal/Zip Code</string>
+
+
+
+
+
 </resources>

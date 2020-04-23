@@ -96,18 +96,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:hint="First Name"
                         android:ems="10"
                         android:inputType="textPersonName"
                         android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/tvFirstName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:text="First Name"
-                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -122,17 +114,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:hint="Last Name"
                         android:inputType="textPersonName"
                         android:textSize="13sp" />
-
-                    <TextView
-                        android:id="@+id/tvLastName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:text="Last Name"
-                        android:textSize="10sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -168,17 +152,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="40dp"
+                    android:hint="StreetAddress"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:textSize="13dp" />
-
-                <TextView
-                    android:id="@+id/tvStreetAddress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:text="Street Address"
-                    android:textSize="10sp"/>
 
                 <EditText
                     android:id="@+id/etStreetAddress2"
@@ -186,17 +163,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="40dp"
+                    android:hint="Second Street Address"
                     android:ems="10"
                     android:inputType="textPersonName"
                     android:textSize="13sp"/>
 
-                <TextView
-                    android:id="@+id/tvStreetAddress2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dp"
-                    android:text="Street Address Line 2"
-                    android:textSize="10sp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -216,18 +187,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:hint="City"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:textSize="13sp"/>
-
-                        <TextView
-                            android:id="@+id/tvCity"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="3dp"
-                            android:layout_weight="1"
-                            android:text="City"
-                            android:textSize="10sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -241,18 +204,10 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:hint="State/Province"
                             android:ems="10"
                             android:inputType="textPersonName"
                             android:textSize="13sp"/>
-
-                        <TextView
-                            android:id="@+id/tvState"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="3dp"
-                            android:layout_weight="1"
-                            android:text="State / Province"
-                            android:textSize="10sp"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -276,17 +231,9 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
+                            android:hint="Postal/Zip Code"
                             android:inputType="textPersonName"
                             android:textSize="13sp"/>
-
-                        <TextView
-                            android:id="@+id/tvPostalCode"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="3dp"
-                            android:layout_weight="1"
-                            android:text="Postal / Zip Code "
-                            android:textSize="10sp"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -381,18 +328,9 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:hint="Area Code"
                         android:inputType="textPersonName"
                         android:textSize="13sp"/>
-
-                    <TextView
-                        android:id="@+id/tvAreaCode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:text="Area Code"
-                        android:textSize="10sp"/>
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -407,19 +345,10 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
+                        android:hint="Phone Number"
                         android:layout_marginRight="30dp"
                         android:inputType="number"
                         android:textSize="13sp"/>
-
-                    <TextView
-                        android:id="@+id/tvPhoneNumber"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1"
-                        android:text="Phone Number "
-                        android:textSize="10sp"/>
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -464,7 +393,7 @@
                 android:id="@+id/tvFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvSD"
+                android:text="Start Date"
                 android:textSize="13dp"
                 android:layout_marginTop="10dp"/>
 
@@ -504,7 +433,7 @@
                 android:id="@+id/tvBtnCv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tvUR"
+                android:text="Upload Resume"
                 android:textSize="13dp"
                 android:layout_marginTop="14dp"/>
 
@@ -521,7 +450,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="0dp"
                     android:background="@drawable/btn_login"
-                    android:text="Sent"
+                    android:text="Upload"
                     android:textAllCaps="false"
                     android:textColor="@drawable/txt_btn_login"
                     android:textSize="14dp" />
@@ -533,7 +462,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/btn_login"
-                    android:text="List"
+                    android:text="Sent"
                     android:textAllCaps="false"
                     android:textColor="@drawable/txt_btn_login"
                     android:textSize="14dp" />
