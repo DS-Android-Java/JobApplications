@@ -14,6 +14,18 @@
     <string name="registerBtn">Sign up</string>
 
 
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Invalid User </string>
+    <string name="invalid_password">The password is very short</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="error_invalid_email">Invalid User </string>
+    <string name="error_invalid_password">The password is very short</string>
+    <string name="error_incorrect_password">Incorrect Password</string>
+    <string name="error_field_required">The field is obligatory</string>
+    <string name="permission_rationale">Contacts permissions are needed for providing email
+        completions.</string>
+
+
     <string name="tvT">Job Application</string>
     <string name="tvDescrip">Complete the form to join us.</string>
     <string name="tvN">Full name</string>
@@ -52,7 +64,7 @@
     <string name="preference_user_key_default">none</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_nav_drawer">Menú de navegación</string>
+    <string name="title_activity_nav_drawer">Menú de Navegación</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="nav_header_title">Applications Job</string>
     <string name="nav_header_subtitle">www.jobApplication.una.ac.cr</string>
