@@ -1,0 +1,144 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="@drawable/bg_gradient_login"
+    android:scrollbars="none">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b8b8b8"
+        android:isScrollContainer="true"
+        android:orientation="vertical"
+        android:stretchColumns="*"
+        tools:context=".RegistrationForm">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="265dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bgregistration">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="70dp"
+                    android:layout_height="68dp"
+                    android:layout_gravity="right"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/registrate"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/coolveticarg"
+                    android:gravity="left"
+                    android:text="@string/registerBtn"
+                    android:textColor="#fff"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/cajat">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_column="0"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/coolveticarg"
+                android:text="@string/userName"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/userNameR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/userNameR"
+                android:inputType="textPersonName"
+                android:textSize="17sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/cajat">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/coolveticarg"
+                    android:text="@string/password"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/passwordR"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="@string/passwordR"
+                    android:inputType="textPassword"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </TableRow>
+
+        <TableRow>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/addUserBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_span="1"
+                android:src="@drawable/ic_check"
+                android:tint="@android:color/background_light"
+                app:backgroundTint="@color/bg_row_background"
+                tools:layout_editor_absoluteX="319dp"
+                tools:layout_editor_absoluteY="547dp" />
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>
