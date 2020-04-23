@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void valida() {
         ModelData md = new ModelData();
+        Usuario userSingin = new Usuario();
         List<Usuario> users = md.InitUsuarios();
         Boolean founded = false;
 
@@ -70,12 +71,15 @@ public class MainActivity extends AppCompatActivity {
                 for (Usuario u : users) {
                     if (u.getUsuario().equals(username.getText().toString()) && u.getClave().equals(password.getText().toString())) {
                         founded = true;
+                        userSingin = u;
                     }
                 }
                 if(founded == false){
                     Toast.makeText(this, "The username or password are incorrect", Toast.LENGTH_LONG).show();
                 }else{
-                    Intent i = new Intent(this, formActivity.class);
+
+                    Intent i = new Intent(this, NavDreawerActivity.class);
+                    i.putExtra("usuarioLogueado", userSingin);
                     startActivity(i);
                 }
             }
