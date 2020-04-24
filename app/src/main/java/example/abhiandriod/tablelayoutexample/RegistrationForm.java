@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 import example.abhiandriod.tablelayoutexample.accesodatos.ModelData;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 
@@ -50,13 +52,26 @@ public class RegistrationForm extends AppCompatActivity {
     public void AddUser(){
         if(validateForm()){
             Usuario u = new Usuario();
-            u.setUsuario(userNameR.getText().toString());
-            u.setClave(passwordR.getText().toString());
-            u.setRol("estandar");
+            ArrayList<Usuario> users = (ArrayList<Usuario>) modelData.getUsuarios();
+            boolean disponible = true;
 
-            modelData.getUsuarios().add(u);
-            finish();
-            Toast.makeText(this,"User added successfully", Toast.LENGTH_LONG).show();
+            for (Usuario ua : users) {
+                if (ua.getUsuario().equals(userNameR.getText().toString()) ) {//Valida si hay algun usuario con ese id
+                    disponible = false;//Si es usario ya se encontro quiere decir que no esta disponible
+                }
+            }
+
+            if(disponible){
+                u.setUsuario(userNameR.getText().toString());
+                u.setClave(passwordR.getText().toString());
+                u.setRol("estandar");
+
+                modelData.getUsuarios().add(u);
+                Toast.makeText(this,"User added successfully", Toast.LENGTH_LONG).show();
+                finish();
+            }else {
+                Toast.makeText(this,"The username is not available", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

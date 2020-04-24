@@ -4,7 +4,9 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,6 +22,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -40,16 +43,28 @@ public class JobApplicationsActivity extends AppCompatActivity
     private SearchView searchView;
     private FloatingActionButton fab;
     private ModelData model = ModelData.getInstance();
+    private Window window;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_applications);
-        Toolbar toolbar = findViewById(R.id.toolbarC);
-        //setSupportActionBar(toolbar);
+        /*Toolbar toolbar = findViewById(R.id.toolbarC);
+        setSupportActionBar(toolbar);
 
         //toolbar fancy stuff
-        //getSupportActionBar().setTitle(getString(R.string.my_application));
+        getSupportActionBar().setTitle(getString(R.string.my_application));*/
+
+        String primaryDark = "#3791a4";
+        String primary = "#1fa1bc";
+        String background = "#b8141b";
+
+        this.window = getWindow();
+        window.setStatusBarColor(Color.parseColor(primaryDark));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor(primary)));
+        window.setNavigationBarColor(Color.parseColor(primaryDark));
+
 
         mRecyclerView = findViewById(R.id.recycler_cursosFld);
         jobApplicationList = new ArrayList<>();
@@ -102,7 +117,7 @@ public class JobApplicationsActivity extends AppCompatActivity
                 mAdapter.removeItem(viewHolder.getAdapterPosition());
 
                 // showing snack bar with Undo option
-                Snackbar snackbar = Snackbar.make(coordinatorLayout, name + " removido!", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(coordinatorLayout, name + " removed!", Snackbar.LENGTH_LONG);
                 snackbar.setAction("UNDO", new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -119,9 +134,9 @@ public class JobApplicationsActivity extends AppCompatActivity
             //send data to Edit Activity
             /*Intent intent = new Intent(this, AddUpdCursoActivity.class);
             intent.putExtra("editable", true);
-            intent.putExtra("jobApplication", aux);
+            intent.putExtra("jobApplication", aux);*/
             mAdapter.notifyDataSetChanged(); //restart left swipe view
-            startActivity(intent);*/
+            //startActivity(intent);
         }
     }
 
@@ -215,10 +230,14 @@ public class JobApplicationsActivity extends AppCompatActivity
                     //found an item that can be updated
                     boolean founded = false;
                     for (JobApplication jobApplication : jobApplicationList) {
-                        if (jobApplication.getFirstName().equals(aux.getFirstName())) {
-                            jobApplication.setFirstName(aux.getFirstName());
+                        if (jobApplication.getFirstName().equals(aux.getFirstName()) &&
+                                jobApplication.getFirstName().equals(aux.getPosition()) &&
+                                jobApplication.getFirstName().equals(aux.getCountry())) {
+                            /*jobApplication.setFirstName(aux.getFirstName());
                             jobApplication.setLastName(aux.getLastName());
-                            jobApplication.setPosition(aux.getPosition());
+                            jobApplication.setPosition(aux.getPosition());*/
+                            jobApplicationList.remove(aux);
+                            jobApplicationList.add(aux);
                             founded = true;
                             break;
                         }
@@ -233,7 +252,7 @@ public class JobApplicationsActivity extends AppCompatActivity
             } else {
                 //found a new Curso Object
                 jobApplicationList.add(aux);
-                Toast.makeText(getApplicationContext(), aux.getFirstName() + " agregado correctamente", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), aux.getFirstName() + " added succesfully", Toast.LENGTH_LONG).show();
             }
         }
     }
@@ -243,5 +262,4 @@ public class JobApplicationsActivity extends AppCompatActivity
         intent.putExtra("editable", false);
         startActivity(intent);*/
     }
-
 }

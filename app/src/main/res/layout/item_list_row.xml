@@ -71,7 +71,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
             android:maxLines="1"
             android:textColor="@color/item_name"
             android:textSize="17dp" />
@@ -83,7 +82,6 @@
             android:layout_marginLeft="@dimen/padd_10"
             android:layout_toRightOf="@id/titleFirstLbl"
             android:ellipsize="end"
-            android:fontFamily="sans-serif-medium"
             android:maxLines="1"
             android:textColor="@color/description"
             android:textSize="17dp" />
@@ -96,6 +94,18 @@
             android:layout_marginTop="5dp"
             android:textColor="@color/description"
             android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/numberLbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="@dimen/padd_10"
+            android:layout_toRightOf="@id/descriptionLbl"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/description"
+            android:textSize="12dp"  />
 
     </RelativeLayout>
 </FrameLayout>

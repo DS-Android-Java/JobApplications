@@ -24,7 +24,7 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
     private JobApplication deletedItem;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView titulo1, titulo2, description;
+        public TextView titulo1, titulo2, description, number;
         //two layers
         public RelativeLayout viewForeground, viewBackgroundDelete, viewBackgroundEdit;
 
@@ -34,9 +34,11 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
             titulo1 = view.findViewById(R.id.titleFirstLbl);
             titulo2 = view.findViewById(R.id.titleSecLbl);
             description = view.findViewById(R.id.descriptionLbl);
+            number = view.findViewById(R.id.numberLbl);
             viewBackgroundDelete = view.findViewById(R.id.view_background_delete);
             viewBackgroundEdit = view.findViewById(R.id.view_background_edit);
             viewForeground = view.findViewById(R.id.view_foreground);
+
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -66,9 +68,10 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
     public void onBindViewHolder(ApplicationAdapter.MyViewHolder holder, int position) {
         // rendering view
         final JobApplication jobApplication = jobApplicationListFiltered.get(position);
-        holder.titulo1.setText(jobApplication.getFirstName());
-        holder.titulo2.setText(jobApplication.getLastName());
-        holder.description.setText(jobApplication.getPosition());
+        holder.titulo1.setText(jobApplication.getFirstName() + " " +jobApplication.getLastName());
+        holder.titulo2.setText(jobApplication.getPosition());
+        holder.description.setText("Phone number: "+ jobApplication.getAreaCode()+" "+ jobApplication.getPhoneNumber());
+        holder.number.setText("Email: "+jobApplication.getEmail());
     }
 
     @Override

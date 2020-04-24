@@ -13,6 +13,7 @@ import android.view.View;
 import example.abhiandriod.tablelayoutexample.adapter.ApplicationAdapter;
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback {
+
     private RecyclerItemTouchHelperListener listener;
     private View foregroundView;
     private View backgroundViewEdit;
