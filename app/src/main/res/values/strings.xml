@@ -70,5 +70,10 @@
     <string name="nav_header_subtitle">www.jobApplication.una.ac.cr</string>
     <string name="menu_home">Home</string>
 
+    <string name="delete">DELETE</string>
+    <string name="edit">EDIT</string>
+    <string name="my_application">Job Applications</string>
+    <string name="action_search">Search</string>
+
 
 </resources>

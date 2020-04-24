@@ -153,8 +153,8 @@ public class NavDreawerActivity extends AppCompatActivity implements NavigationV
     }
 
     public void abrirApplicationsList() {
-        //Intent intent = new Intent(this, applicationActivity.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, JobApplicationsActivity.class);
+        startActivity(intent);
     }
 
     /*@Override

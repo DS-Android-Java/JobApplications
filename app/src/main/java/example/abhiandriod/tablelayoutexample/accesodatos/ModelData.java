@@ -59,4 +59,12 @@ public class ModelData {
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
+
+    public List<JobApplication> getListajobApplications() {
+        return listajobApplications;
+    }
+
+    public void setListajobApplications(List<JobApplication> listajobApplications) {
+        this.listajobApplications = listajobApplications;
+    }
 }

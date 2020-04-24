@@ -6,5 +6,7 @@
     <color name="bg_row_background">#b8141b</color>
     <color name="item_name">#535353</color>
     <color name="description">#a9a9a9</color>
+    <color name="bg_row_background_delete">#fa315b</color>
+    <color name="bg_row_background_edit">#388E3C</color>
 </resources>
 
