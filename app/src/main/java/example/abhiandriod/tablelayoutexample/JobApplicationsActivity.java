@@ -50,11 +50,11 @@ public class JobApplicationsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_applications);
-        /*Toolbar toolbar = findViewById(R.id.toolbarC);
+        Toolbar toolbar = findViewById(R.id.toolbarC);
         setSupportActionBar(toolbar);
 
         //toolbar fancy stuff
-        getSupportActionBar().setTitle(getString(R.string.my_application));*/
+        getSupportActionBar().setTitle(getString(R.string.my_application));
 
         String primaryDark = "#3791a4";
         String primary = "#1fa1bc";
@@ -65,10 +65,9 @@ public class JobApplicationsActivity extends AppCompatActivity
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor(primary)));
         window.setNavigationBarColor(Color.parseColor(primaryDark));
 
-
         mRecyclerView = findViewById(R.id.recycler_cursosFld);
         jobApplicationList = new ArrayList<>();
-        jobApplicationList= model.getListajobApplications();
+        jobApplicationList = model.getListajobApplications();
         mAdapter = new ApplicationAdapter(jobApplicationList, this);
         coordinatorLayout = findViewById(R.id.coordinator_layoutC);
 
@@ -95,7 +94,6 @@ public class JobApplicationsActivity extends AppCompatActivity
         new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(mRecyclerView);
 
         //should use database info
-
 
         // Receive the Carrera sent by AddUpdCarreraActivity
         checkIntentInformation();
@@ -192,7 +190,7 @@ public class JobApplicationsActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+/*    @Override
     public void onBackPressed() {
         if (!searchView.isIconified()) {
             searchView.setIconified(true);
@@ -203,7 +201,7 @@ public class JobApplicationsActivity extends AppCompatActivity
         startActivity(a);
         super.onBackPressed();
     }
-
+*/
     private void whiteNotificationBar(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int flags = view.getSystemUiVisibility();
