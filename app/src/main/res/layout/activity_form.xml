@@ -456,7 +456,7 @@
                     android:textSize="14dp" />
 
                 <Button
-                    android:id="@+id/btnList"
+                    android:id="@+id/btnSent"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"

@@ -25,7 +25,8 @@ import android.widget.Toast;
 
 import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 
-public class NavDreawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class NavDreawerActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     private AppBarConfiguration mAppBarConfiguration;
     private Usuario ul = new Usuario();
@@ -149,11 +150,13 @@ public class NavDreawerActivity extends AppCompatActivity implements NavigationV
 
     public void abrirJobApplication() {
         Intent intent = new Intent(this, formActivity.class);
+        intent.putExtra("usuarioLogueado", ul);
         startActivity(intent);
     }
 
     public void abrirApplicationsList() {
         Intent intent = new Intent(this, JobApplicationsActivity.class);
+        intent.putExtra("usuarioLogueado", ul);
         startActivity(intent);
     }
 

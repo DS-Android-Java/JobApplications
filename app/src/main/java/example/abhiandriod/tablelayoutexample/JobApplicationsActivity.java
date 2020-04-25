@@ -32,6 +32,7 @@ import example.abhiandriod.tablelayoutexample.accesodatos.ModelData;
 import example.abhiandriod.tablelayoutexample.adapter.ApplicationAdapter;
 import example.abhiandriod.tablelayoutexample.helper.RecyclerItemTouchHelper;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.JobApplication;
+import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 
 public class JobApplicationsActivity extends AppCompatActivity
         implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener, ApplicationAdapter.JobApplicationAdapterListener {
@@ -44,6 +45,8 @@ public class JobApplicationsActivity extends AppCompatActivity
     private FloatingActionButton fab;
     private ModelData model = ModelData.getInstance();
     private Window window;
+
+    private Usuario ul =  new Usuario();
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -59,6 +62,8 @@ public class JobApplicationsActivity extends AppCompatActivity
         String primaryDark = "#3791a4";
         String primary = "#1fa1bc";
         String background = "#b8141b";
+
+        ul = (Usuario) getIntent().getSerializableExtra("usuarioLogueado");
 
         this.window = getWindow();
         window.setStatusBarColor(Color.parseColor(primaryDark));
@@ -190,7 +195,7 @@ public class JobApplicationsActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-/*    @Override
+    @Override
     public void onBackPressed() {
         if (!searchView.isIconified()) {
             searchView.setIconified(true);
@@ -198,10 +203,11 @@ public class JobApplicationsActivity extends AppCompatActivity
         }
         Intent a = new Intent(this, NavDreawerActivity.class);
         a.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        a.putExtra("usuarioLogueado", ul);
         startActivity(a);
         super.onBackPressed();
     }
-*/
+
     private void whiteNotificationBar(View view) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int flags = view.getSystemUiVisibility();

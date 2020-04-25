@@ -2,6 +2,7 @@ package example.abhiandriod.tablelayoutexample;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
@@ -21,6 +22,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 
+import example.abhiandriod.tablelayoutexample.accesodatos.ModelData;
+import example.abhiandriod.tablelayoutexample.logicadenegocio.JobApplication;
+import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 import example.abhiandriod.tablelayoutexample.ui.DatePickerFragment;
 
 public class formActivity extends AppCompatActivity {
@@ -31,6 +35,20 @@ public class formActivity extends AppCompatActivity {
     private EditText etDatePicker;
     private Window window;
 
+    private EditText etFirstName;
+    private EditText etLastName;
+    private EditText etStreetAddress;
+    private EditText etStreetAddress2;
+    private EditText etCity;
+    private EditText etState;
+    private EditText etPostalCode;
+    private EditText etEmail;
+    private EditText etAreaCode;
+    private EditText etPhoneNumber;
+    private Button sentBtn;
+
+    private Usuario ul = new Usuario();
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +58,21 @@ public class formActivity extends AppCompatActivity {
         String primaryDark = "#3791a4";
         String primary = "#1fa1bc";
         String background = "#b8141b";
+
+        etFirstName = (EditText)findViewById(R.id.etFirstName);
+        etLastName = (EditText)findViewById(R.id.etLastName);
+        etStreetAddress = (EditText)findViewById(R.id.etStreetAddress);
+        etStreetAddress2 = (EditText)findViewById(R.id.etStreetAddress2);
+        etCity = (EditText)findViewById(R.id.etCity);
+        etState = (EditText)findViewById(R.id.etState);
+        etPostalCode = (EditText)findViewById(R.id.etPostalCode);
+        etEmail = (EditText)findViewById(R.id.etEmail);
+        etAreaCode = (EditText)findViewById(R.id.etAreaCode);
+        etPhoneNumber= (EditText)findViewById(R.id.etPhoneNumber);
+        sentBtn = (Button)findViewById(R.id.btnSent);
+
+        //Saco de nuevo el usuariologueado
+        ul = (Usuario) getIntent().getSerializableExtra("usuarioLogueado");
 
         this.window = getWindow();
         window.setStatusBarColor(Color.parseColor(primaryDark));
@@ -61,7 +94,6 @@ public class formActivity extends AppCompatActivity {
 
         ArrayList<String> puestos = new ArrayList<>();
         puestos.add("System Engineer");
-        puestos.add("Bitch");
         puestos.add("Software Tester");
         puestos.add("Data Analist");
         puestos.add("Electronic Engineer");
@@ -89,6 +121,13 @@ public class formActivity extends AppCompatActivity {
                 uploadResume();
             }
         });
+
+        sentBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               addJobApplication();
+            }
+        });
     }
 
     private void showDatePickerDialog() {
@@ -106,6 +145,49 @@ public class formActivity extends AppCompatActivity {
 
     public void uploadResume(){
         Toast.makeText(this,"Uploading Resume" , Toast.LENGTH_LONG).show();
+    }
+
+    public void addJobApplication(){
+        if(validate()){//Si los campos son validados puede hacer la insersion
+            JobApplication mijapplication = new JobApplication();
+            ArrayList<JobApplication> miJAS = (ArrayList<JobApplication>) ModelData.getInstance().getListajobApplications();
+
+            mijapplication.setFirstName(etFirstName.getText().toString());
+            mijapplication.setLastName(etLastName.getText().toString());
+            mijapplication.setStreetAddress(etStreetAddress.getText().toString());
+            mijapplication.setSecondStreetAddress(etStreetAddress2.getText().toString());
+            mijapplication.setCity(etCity.getText().toString());
+            mijapplication.setState(etState.getText().toString());
+            mijapplication.setPostalCode(etPostalCode.getText().toString());
+            mijapplication.setEmail(etEmail.getText().toString());
+            mijapplication.setAreaCode(etAreaCode.getText().toString());
+            mijapplication.setPhoneNumber(etPhoneNumber.getText().toString());
+            mijapplication.setDate(etDatePicker.getText().toString());
+            mijapplication.setPosition(spinnerAP.getSelectedItem().toString());
+            mijapplication.setCountry(spinnerP.getSelectedItem().toString());
+
+            miJAS.add(mijapplication);
+
+            Intent i = new Intent(this, NavDreawerActivity.class);
+            i.putExtra("usuarioLogueado", ul);
+            startActivity(i);
+
+            Toast.makeText(this, "Job Application submitted succesfully!",Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this,"Some Errors!" , Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public boolean validate(){
+        boolean valido = true;
+
+        if(etFirstName.getText().length()==0){//Aca faltan las validaciones para los demas campos
+            Toast.makeText(this,"You must complete all the fields",Toast.LENGTH_LONG).show();
+            valido = false;
+        }else{
+            valido = true;
+        }
+        return valido;
     }
 
 }

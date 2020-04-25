@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 if(founded == false){
                     Toast.makeText(this, "The username or password are incorrect", Toast.LENGTH_LONG).show();
                 }else{
-
                     Intent i = new Intent(this, NavDreawerActivity.class);
                     i.putExtra("usuarioLogueado", userSingin);
                     startActivity(i);

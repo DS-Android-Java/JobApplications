@@ -64,7 +64,7 @@
     <string name="preference_user_key_default">none</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_nav_drawer">Menú de Navegación</string>
+    <string name="title_activity_nav_drawer">Navigation Menu</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="nav_header_title">Applications Job</string>
     <string name="nav_header_subtitle">www.jobApplication.una.ac.cr</string>
@@ -75,5 +75,6 @@
     <string name="my_application">Job Applications</string>
     <string name="action_search">Search</string>
 
+    <string name="forgotP">Forgot Password?</string>
 
 </resources>
