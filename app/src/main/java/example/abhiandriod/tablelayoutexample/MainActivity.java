@@ -14,7 +14,10 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText password;
     private Window window;
     private ModelData modelData = ModelData.getInstance();
+    private TextView forgotP;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         registerBtn = (Button) findViewById(R.id.registerBtn);
         username = (EditText) findViewById(R.id.userName);
         password = (EditText) findViewById(R.id.password);
+        forgotP = (TextView)findViewById(R.id.forgotP);
 
         String primaryDark = "#3791a4";
         String primary = "#1fa1bc";
@@ -63,12 +68,21 @@ public class MainActivity extends AppCompatActivity {
                 registration();
             }
         });
+        forgotP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signalChangePassword();
+            }
+        });
     }
 
     public void registration(){
+        boolean seleccion = false;
         Intent i = new Intent(this, RegistrationForm.class);
+        i.putExtra("accion",seleccion);
         startActivity(i);
     }
+
     public void valida() {
         //ModelData md = new ModelData();
         Usuario userSingin = new Usuario();
@@ -97,6 +111,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void signalChangePassword(){
+        boolean seleccion = true;
+            Intent i = new Intent(this,RegistrationForm.class);
+            i.putExtra("accion",seleccion);
+            startActivity(i);
     }
 
 }

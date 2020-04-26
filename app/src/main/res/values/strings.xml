@@ -75,6 +75,8 @@
     <string name="my_application">Job Applications</string>
     <string name="action_search">Search</string>
 
-    <string name="forgotP">Forgot Password?</string>
+    <string name="forgotP">Change Password</string>
+    <string name="passwordConfirm">Confirm Password</string>
+
 
 </resources>
