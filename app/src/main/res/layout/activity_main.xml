@@ -80,6 +80,7 @@
             android:layout_height="wrap_content"
             android:layout_column="0"
             android:layout_marginLeft="10dp"
+            android:layout_span="2"
             android:textColor="#fff"
             android:text="@string/forgotP"
             android:fontFamily="@font/coolveticarg"

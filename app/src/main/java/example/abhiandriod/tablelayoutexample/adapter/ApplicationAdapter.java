@@ -19,6 +19,7 @@ import example.abhiandriod.tablelayoutexample.R;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.JobApplication;
 
 public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.MyViewHolder> implements Filterable {
+
     private List<JobApplication> jobApplicationList;
     private List<JobApplication> jobApplicationListFiltered;
     private JobApplicationAdapterListener listener;
