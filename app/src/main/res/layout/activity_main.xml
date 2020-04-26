@@ -83,7 +83,7 @@
             android:textColor="#fff"
             android:text="@string/forgotP"
             android:fontFamily="@font/coolveticarg"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
     </TableRow>
 
     <TableRow android:layout_marginTop="5dp">
