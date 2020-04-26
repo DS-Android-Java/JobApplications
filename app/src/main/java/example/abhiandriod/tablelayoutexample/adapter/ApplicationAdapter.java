@@ -1,5 +1,6 @@
 package example.abhiandriod.tablelayoutexample.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,7 +43,6 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    // send selected contact in callback
                     listener.onContactSelected(jobApplicationListFiltered.get(getAdapterPosition()));
                 }
             });
@@ -56,6 +56,7 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         this.jobApplicationListFiltered = jobApplicationlist;
     }
 
+    @NonNull
     @Override
     public ApplicationAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
@@ -73,6 +74,7 @@ public class ApplicationAdapter extends RecyclerView.Adapter<ApplicationAdapter.
         holder.description.setText("Phone number: "+ jobApplication.getAreaCode()+" "+ jobApplication.getPhoneNumber());
         holder.number.setText("Email: "+jobApplication.getEmail());
     }
+
 
     @Override
     public int getItemCount() {

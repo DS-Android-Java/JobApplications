@@ -10,6 +10,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
@@ -173,21 +174,61 @@ public class formActivity extends AppCompatActivity {
             startActivity(i);
 
             Toast.makeText(this, "Job Application submitted succesfully!",Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(this,"Some Errors!" , Toast.LENGTH_LONG).show();
         }
     }
 
     public boolean validate(){
-        boolean valido = true;
+        int valido=0;
 
-        if(etFirstName.getText().length()==0){//Aca faltan las validaciones para los demas campos
-            Toast.makeText(this,"You must complete all the fields",Toast.LENGTH_LONG).show();
-            valido = false;
-        }else{
-            valido = true;
+        if (TextUtils.isEmpty(this.etFirstName.getText())) {
+            etFirstName.setError("Required First Name");//Asi se le coloca un mensaje de error en los campos en android
+            valido++;
         }
-        return valido;
+        if(TextUtils.isEmpty(this.etLastName.getText())){
+            etLastName.setError("Required Last Name");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etStreetAddress.getText())){
+            etStreetAddress.setError("Required Street Addres");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etStreetAddress2.getText())){
+            etStreetAddress2.setError("Required Second Street Address");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etCity.getText())){
+            etCity.setError("Required City");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etState.getText())){
+            etState.setError("Required State");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etPostalCode.getText())){
+            etPostalCode.setError("Required Postal Code");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etEmail.getText())){
+            etEmail.setError("Required Email");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etAreaCode.getText())){
+            etAreaCode.setError("Required Area Code");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etPhoneNumber.getText())){
+            etPhoneNumber.setError("Required Phone Number");
+            valido++;
+        }
+        if(TextUtils.isEmpty(this.etDatePicker.getText())){
+            etDatePicker.setError("Required Date");
+            valido++;
+        }
+        if (valido > 0) {
+            Toast.makeText(getApplicationContext(), "You must complete all the fields", Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
     }
 
 }

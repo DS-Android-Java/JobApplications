@@ -329,7 +329,7 @@
                         android:layout_weight="1"
                         android:ems="10"
                         android:hint="Area Code"
-                        android:inputType="textPersonName"
+                        android:inputType="number"
                         android:textSize="13sp"/>
                 </LinearLayout>
 
