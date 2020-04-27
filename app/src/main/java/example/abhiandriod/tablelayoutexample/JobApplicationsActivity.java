@@ -43,7 +43,7 @@ public class JobApplicationsActivity extends AppCompatActivity
     private CoordinatorLayout coordinatorLayout;
     private SearchView searchView;
     private FloatingActionButton fab;
-    private ModelData model = ModelData.getInstance();
+    private ModelData model;
     private Window window;
 
     private Usuario ul =  new Usuario();
@@ -63,6 +63,7 @@ public class JobApplicationsActivity extends AppCompatActivity
         String primary = "#1fa1bc";
         String background = "#b8141b";
 
+        model = ModelData.getInstance();
         ul = (Usuario) getIntent().getSerializableExtra("usuarioLogueado");
 
         this.window = getWindow();
@@ -86,13 +87,13 @@ public class JobApplicationsActivity extends AppCompatActivity
         mRecyclerView.setAdapter(mAdapter);
 
         // go to update or add career
-        fab = findViewById(R.id.addBtnC);
-        fab.setOnClickListener(new View.OnClickListener() {
+        //fab = findViewById(R.id.addBtnC);
+        /*fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 goToAddUpdJobApplication();
             }
-        });
+        });*/
 
         //delete swiping left and right
         ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new RecyclerItemTouchHelper(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT, this);

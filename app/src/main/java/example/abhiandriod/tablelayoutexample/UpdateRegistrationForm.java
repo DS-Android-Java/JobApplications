@@ -229,6 +229,4 @@ public class UpdateRegistrationForm extends AppCompatActivity {
         }
         return true;
     }
-
-
 }

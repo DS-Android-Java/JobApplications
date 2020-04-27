@@ -48,7 +48,7 @@ public class formActivity extends AppCompatActivity {
     private EditText etPhoneNumber;
     private Button sentBtn;
 
-    private Usuario ul = new Usuario();
+    private Usuario ul;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -73,6 +73,7 @@ public class formActivity extends AppCompatActivity {
         sentBtn = (Button)findViewById(R.id.btnSent);
 
         //Saco de nuevo el usuariologueado
+        ul = new Usuario();
         ul = (Usuario) getIntent().getSerializableExtra("usuarioLogueado");
 
         this.window = getWindow();
@@ -172,6 +173,8 @@ public class formActivity extends AppCompatActivity {
             Intent i = new Intent(this, NavDreawerActivity.class);
             i.putExtra("usuarioLogueado", ul);
             startActivity(i);
+            ////
+            finish();
 
             Toast.makeText(this, "Job Application submitted succesfully!",Toast.LENGTH_LONG).show();
         }

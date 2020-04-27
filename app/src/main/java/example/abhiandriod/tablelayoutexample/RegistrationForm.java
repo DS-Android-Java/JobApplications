@@ -23,7 +23,7 @@ public class RegistrationForm extends AppCompatActivity {
     private EditText passwordR;
     private EditText passwordConfirm;
     private FloatingActionButton addUserBtn;
-    private ModelData modelData = ModelData.getInstance();
+    private ModelData modelData;
     private boolean signalaction;
     private TextView textViewA;
 
@@ -32,6 +32,7 @@ public class RegistrationForm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_form);
 
+        modelData = ModelData.getInstance();
         //Primero se mapean los componentes del formulario que necesitaremos
         userNameR = (EditText) findViewById(R.id.userNameR);
         passwordR = (EditText) findViewById(R.id.passwordR);

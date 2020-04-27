@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText username;
     private EditText password;
     private Window window;
-    private ModelData modelData = ModelData.getInstance();
+    private ModelData modelData;
     private TextView forgotP;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         username = (EditText) findViewById(R.id.userName);
         password = (EditText) findViewById(R.id.password);
         forgotP = (TextView)findViewById(R.id.forgotP);
+        modelData = ModelData.getInstance();
 
         String primaryDark = "#3791a4";
         String primary = "#1fa1bc";
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
             Intent i = new Intent(this,RegistrationForm.class);
             i.putExtra("accion",seleccion);
             startActivity(i);
+            finish();
     }
 
 }
