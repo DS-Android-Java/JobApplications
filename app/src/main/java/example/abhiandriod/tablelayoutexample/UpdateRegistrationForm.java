@@ -1,4 +1,4 @@
-package example.abhiandriod.tablelayoutexample.ui;
+package example.abhiandriod.tablelayoutexample;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;

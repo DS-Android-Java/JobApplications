@@ -33,7 +33,6 @@ import example.abhiandriod.tablelayoutexample.adapter.ApplicationAdapter;
 import example.abhiandriod.tablelayoutexample.helper.RecyclerItemTouchHelper;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.JobApplication;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
-import example.abhiandriod.tablelayoutexample.ui.UpdateRegistrationForm;
 
 public class JobApplicationsActivity extends AppCompatActivity
         implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener, ApplicationAdapter.JobApplicationAdapterListener {
