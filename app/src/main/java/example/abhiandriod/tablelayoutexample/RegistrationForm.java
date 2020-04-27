@@ -139,6 +139,10 @@ public class RegistrationForm extends AppCompatActivity {
             passwordR.setError("Password required");
             error++;
         }
+        if(!this.userNameR.getText().toString().contains("@")){
+            userNameR.setError("The user must be an email");
+            error++;
+        }
         if (this.passwordR.getText().length() < 8) {
             passwordR.setError("Password must be at least 8 characters");
             error++;

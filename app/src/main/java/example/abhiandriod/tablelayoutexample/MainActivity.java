@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "You must complete all the fields", Toast.LENGTH_LONG).show();
         } else {
             if (!username.getText().toString().contains("@")) {
-                Toast.makeText(this, "The user must be a email", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "The user must be an email", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Validating", Toast.LENGTH_LONG).show();
                 for (Usuario u : users) {
