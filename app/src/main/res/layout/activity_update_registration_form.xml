@@ -462,7 +462,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:background="@drawable/btn_login"
-                    android:text="Sent"
+                    android:text="@string/btnSentU"
                     android:textAllCaps="false"
                     android:textColor="@drawable/txt_btn_login"
                     android:textSize="14dp" />

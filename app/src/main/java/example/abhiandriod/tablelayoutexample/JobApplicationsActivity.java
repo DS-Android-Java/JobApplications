@@ -137,6 +137,7 @@ public class JobApplicationsActivity extends AppCompatActivity
             //send data to Edit Activity
             Intent intent = new Intent(this, UpdateRegistrationForm.class);
             intent.putExtra("jobapplication", aux);
+            intent.putExtra("usuarioLogueado",ul);
             mAdapter.notifyDataSetChanged(); //restart left swipe view
             startActivity(intent);
         }
@@ -228,7 +229,7 @@ public class JobApplicationsActivity extends AppCompatActivity
             JobApplication aux;
             aux = (JobApplication) getIntent().getSerializableExtra("addApplication");
             if (aux == null) {
-                aux = (JobApplication) getIntent().getSerializableExtra("editJobApplication");
+                aux = (JobApplication) getIntent().getSerializableExtra("jobapplication");
                 if (aux != null) {
                     //found an item that can be updated
                     boolean founded = false;
@@ -239,7 +240,7 @@ public class JobApplicationsActivity extends AppCompatActivity
                                 jobApplication.getFirstName().equals(aux.getCountry())jobApplication.setFirstName(aux.getFirstName());
                             jobApplication.setLastName(aux.getLastName());
                             jobApplication.setPosition(aux.getPosition());*/
-                            jobApplicationList.remove(aux);
+                            jobApplicationList.remove(jobApplication);
                             jobApplicationList.add(aux);
                             founded = true;
                             break;

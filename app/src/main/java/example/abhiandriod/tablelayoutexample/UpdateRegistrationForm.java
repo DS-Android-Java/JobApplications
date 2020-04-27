@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import example.abhiandriod.tablelayoutexample.JobApplicationsActivity;
 import example.abhiandriod.tablelayoutexample.R;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.JobApplication;
+import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
 import example.abhiandriod.tablelayoutexample.ui.DatePickerFragment;
 
 public class UpdateRegistrationForm extends AppCompatActivity {
@@ -38,17 +39,13 @@ public class UpdateRegistrationForm extends AppCompatActivity {
     private EditText etAreaCodeU;
     private EditText etPhoneNumberU;
     private Button sentBtnU;
+    private Usuario ul;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_registration_form);
-
-
-        String primaryDark = "#3791a4";
-        String primary = "#1fa1bc";
-        String background = "#b8141b";
 
         etFirstNameU = (EditText)findViewById(R.id.etFirstNameU);
         etLastNameU = (EditText)findViewById(R.id.etLastNameU);
@@ -61,6 +58,8 @@ public class UpdateRegistrationForm extends AppCompatActivity {
         etAreaCodeU = (EditText)findViewById(R.id.etAreaCodeU);
         etPhoneNumberU = (EditText)findViewById(R.id.etPhoneNumberU);
         sentBtnU = (Button)findViewById(R.id.btnSentU);
+
+        ul = (Usuario) getIntent().getSerializableExtra("usuarioLogueado");
 
         ArrayList<String> paises = new ArrayList<>();
         paises.add("Costa Rica");
@@ -158,15 +157,16 @@ public class UpdateRegistrationForm extends AppCompatActivity {
                     etCityU.getText().toString(),
                     etStateU.getText().toString(),
                     etPostalCodeU.getText().toString(),
+                    spinnerPU.getSelectedItem().toString(),
                     etEmailU.getText().toString(),
                     etAreaCodeU.getText().toString(),
                     etPhoneNumberU.getText().toString(),
-                    etDatePickerU.getText().toString(),
                     spinnerAPU.getSelectedItem().toString(),
-                    spinnerPU.getSelectedItem().toString()
+                    etDatePickerU.getText().toString()
             );
             Intent intent = new Intent(getBaseContext(), JobApplicationsActivity.class);
             intent.putExtra("jobapplication", jobApplication);
+            intent.putExtra("usuarioLogueado",ul);
             startActivity(intent);
             finish();
         }
