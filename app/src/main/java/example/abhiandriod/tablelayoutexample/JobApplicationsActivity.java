@@ -33,6 +33,7 @@ import example.abhiandriod.tablelayoutexample.adapter.ApplicationAdapter;
 import example.abhiandriod.tablelayoutexample.helper.RecyclerItemTouchHelper;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.JobApplication;
 import example.abhiandriod.tablelayoutexample.logicadenegocio.Usuario;
+import example.abhiandriod.tablelayoutexample.ui.UpdateRegistrationForm;
 
 public class JobApplicationsActivity extends AppCompatActivity
         implements RecyclerItemTouchHelper.RecyclerItemTouchHelperListener, ApplicationAdapter.JobApplicationAdapterListener {
@@ -135,11 +136,10 @@ public class JobApplicationsActivity extends AppCompatActivity
             //If is editing a row object
             JobApplication aux = mAdapter.getSwipedItem(viewHolder.getAdapterPosition());
             //send data to Edit Activity
-            /*Intent intent = new Intent(this, AddUpdCursoActivity.class);
-            intent.putExtra("editable", true);
-            intent.putExtra("jobApplication", aux);*/
+            Intent intent = new Intent(this, UpdateRegistrationForm.class);
+            intent.putExtra("jobapplication", aux);
             mAdapter.notifyDataSetChanged(); //restart left swipe view
-            //startActivity(intent);
+            startActivity(intent);
         }
     }
 
@@ -229,15 +229,15 @@ public class JobApplicationsActivity extends AppCompatActivity
             JobApplication aux;
             aux = (JobApplication) getIntent().getSerializableExtra("addApplication");
             if (aux == null) {
-                aux = (JobApplication) getIntent().getSerializableExtra("editApplication");
+                aux = (JobApplication) getIntent().getSerializableExtra("editJobApplication");
                 if (aux != null) {
                     //found an item that can be updated
                     boolean founded = false;
                     for (JobApplication jobApplication : jobApplicationList) {
-                        if (jobApplication.getFirstName().equals(aux.getFirstName()) &&
+                        if (jobApplication.getFirstName().equals(aux.getFirstName()) ) {
+                            /*&&
                                 jobApplication.getFirstName().equals(aux.getPosition()) &&
-                                jobApplication.getFirstName().equals(aux.getCountry())) {
-                            /*jobApplication.setFirstName(aux.getFirstName());
+                                jobApplication.getFirstName().equals(aux.getCountry())jobApplication.setFirstName(aux.getFirstName());
                             jobApplication.setLastName(aux.getLastName());
                             jobApplication.setPosition(aux.getPosition());*/
                             jobApplicationList.remove(aux);
@@ -256,14 +256,14 @@ public class JobApplicationsActivity extends AppCompatActivity
             } else {
                 //found a new Curso Object
                 jobApplicationList.add(aux);
-                Toast.makeText(getApplicationContext(), aux.getFirstName() + " added succesfully", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), aux.getFirstName() + " add succesfully", Toast.LENGTH_LONG).show();
             }
         }
     }
 
     private void goToAddUpdJobApplication() {
-        /*Intent intent = new Intent(this, AddUpdCursoActivity.class);
-        intent.putExtra("editable", false);
-        startActivity(intent);*/
+        Intent intent = new Intent(this, UpdateRegistrationForm.class);
+        intent.putExtra("jobapplication", false);
+        startActivity(intent);
     }
 }
