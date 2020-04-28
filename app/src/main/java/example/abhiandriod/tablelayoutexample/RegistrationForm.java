@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class RegistrationForm extends AppCompatActivity {
     private EditText userNameR;
     private EditText passwordR;
     private EditText passwordConfirm;
+    private TableRow oldKey;
     private FloatingActionButton addUserBtn;
     private ModelData modelData;
     private boolean signalaction;
@@ -42,24 +44,26 @@ public class RegistrationForm extends AppCompatActivity {
 
         //Saco el bolean para deducir el tipo de accion que se desea realizar
         signalaction = getIntent().getBooleanExtra("accion", true);
-        System.out.println("La seleccion fue ");
 
-        if (signalaction == true) {//Si es verdadero lo que se quiere hacer es cambiar la clave
+
+        //ACA TIENE QUE CAMBIAR ESO
+        /*if (signalaction == true) {//Si es verdadero lo que se quiere hacer es cambiar la clave
             textViewA.setText("Changing Password");
+
             addUserBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     ChangePassword();
                 }
-            });
-        } else {//Si es falso se asigna la funcion de agregar usuario
+            });*/
+        //} else {//Si es falso se asigna la funcion de agregar usuario
             addUserBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     AddUser();
                 }
             });
-        }
+        //}
 
         //Aca se prepara el popup
         DisplayMetrics medidasVentana = new DisplayMetrics();

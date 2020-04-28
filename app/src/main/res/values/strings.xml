@@ -6,6 +6,7 @@
     <string name="loginForm">Login Form</string>
     <string name="userName">UserName</string>
     <string name="password">Password</string>
+    <string name="passwordU">New Password</string>
 
     <string name="userNameR">Email</string>
     <string name="passwordR">xxxxxxxx</string>
@@ -78,5 +79,7 @@
     <string name="forgotP">Change Password</string>
     <string name="passwordConfirm">Confirm Password</string>
     <string name="btnSentU">Update</string>
+    <string name="oldPassword">Old Password</string>
+    <string name="chgPass">Changing Password</string>
 
 </resources>

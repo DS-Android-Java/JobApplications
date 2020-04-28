@@ -78,9 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void registration(){
-        boolean seleccion = false;
         Intent i = new Intent(this, RegistrationForm.class);
-        i.putExtra("accion",seleccion);
         startActivity(i);
     }
 
@@ -109,17 +107,15 @@ public class MainActivity extends AppCompatActivity {
                     Intent i = new Intent(this, NavDreawerActivity.class);
                     i.putExtra("usuarioLogueado", userSingin);
                     startActivity(i);
+                    finish();
                 }
             }
         }
     }
 
-    public void signalChangePassword(){
-        boolean seleccion = true;
-            Intent i = new Intent(this,RegistrationForm.class);
-            i.putExtra("accion",seleccion);
+    public void signalChangePassword(){//Funcion para desplegar el popup de nueva clave
+            Intent i = new Intent(this,ChangePasswordForm.class);
             startActivity(i);
-            finish();
     }
 
 }
