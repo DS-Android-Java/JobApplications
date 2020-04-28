@@ -26,9 +26,9 @@ public class ModelData {
 
     public List<Usuario> InitUsuarios(){
         List<Usuario> users = new ArrayList<>();
-        users.add(new Usuario("@diego", "diego", "administrador"));
-        users.add(new Usuario("@allison", "allimv", "administrador"));
-        users.add(new Usuario("@vane", "vanessa", "estandar"));
+        users.add(new Usuario("@diego", "diego123", "administrador"));
+        users.add(new Usuario("@allison", "allimv123", "administrador"));
+        users.add(new Usuario("@vane", "vanessa123", "estandar"));
         return users;
     }
 

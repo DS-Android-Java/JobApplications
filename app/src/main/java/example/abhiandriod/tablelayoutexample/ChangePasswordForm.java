@@ -71,8 +71,7 @@ public class ChangePasswordForm extends AppCompatActivity {
                         miListU.add(miUsuarioModificable);//Y se agrega a la lista
                         existeUsuario = true;
                         break;
-                    }
-                }
+                    }                }
             }
 
             if (existeUsuario && existeClave == false) {//Si el usuario que se desea modificar fue encontrado
