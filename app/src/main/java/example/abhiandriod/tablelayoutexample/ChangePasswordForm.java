@@ -59,16 +59,16 @@ public class ChangePasswordForm extends AppCompatActivity {
             Usuario miUsuarioModificable = new Usuario();
             for (Usuario u : miListU) {//For que valida si el usario existe
                 if (u.getUsuario().equals(userNameRU.getText().toString()) &&
-                        u.getClave().equals(oldPassword.getText().toString())) {//Si algun usuario es compatible con el usuairo ingresado
-                    miUsuarioModificable = u;
-                    if (miUsuarioModificable.getClave().equals(passwordRU.getText().toString())) {
+                        u.getClave().equals(oldPassword.getText().toString())) {//Si algun usuario es compatible con el usuairo y clave antigua ingresado
+                    miUsuarioModificable = u;//Se guarda el nuevo usuario
+                    if (miUsuarioModificable.getClave().equals(passwordRU.getText().toString())) {//Se valida que la nueva no sea igual a la anterior
                         passwordRU.setError("The password can not be the same as the previous one");
                         existeClave = true;
                         //Toast.makeText(this,"The password can not be the same as the previous one", Toast.LENGTH_LONG).show();
                     } else {
                         miUsuarioModificable.setClave(passwordRU.getText().toString());//Se asigna la nueva clave al usuario
                         miListU.remove(u);
-                        miListU.add(miUsuarioModificable);
+                        miListU.add(miUsuarioModificable);//Y se agrega a la lista
                         existeUsuario = true;
                         break;
                     }
@@ -77,7 +77,7 @@ public class ChangePasswordForm extends AppCompatActivity {
 
             if (existeUsuario && existeClave == false) {//Si el usuario que se desea modificar fue encontrado
                 Toast.makeText(this, "Password successfully changed", Toast.LENGTH_LONG).show();
-                finish();
+                finish();//Si la clave es cambiada correctamente se cierra el popup
             }else if(!existeUsuario && !existeClave){
                 Toast.makeText(this, "This username was not found!", Toast.LENGTH_LONG).show();
             }
