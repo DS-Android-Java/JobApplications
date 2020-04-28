@@ -45,25 +45,12 @@ public class RegistrationForm extends AppCompatActivity {
         //Saco el bolean para deducir el tipo de accion que se desea realizar
         signalaction = getIntent().getBooleanExtra("accion", true);
 
-
-        //ACA TIENE QUE CAMBIAR ESO
-        /*if (signalaction == true) {//Si es verdadero lo que se quiere hacer es cambiar la clave
-            textViewA.setText("Changing Password");
-
-            addUserBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ChangePassword();
-                }
-            });*/
-        //} else {//Si es falso se asigna la funcion de agregar usuario
-            addUserBtn.setOnClickListener(new View.OnClickListener() {
+        addUserBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     AddUser();
                 }
             });
-        //}
 
         //Aca se prepara el popup
         DisplayMetrics medidasVentana = new DisplayMetrics();
@@ -100,39 +87,6 @@ public class RegistrationForm extends AppCompatActivity {
             }
         }
     }
-
-    public void ChangePassword() {//Funcion de proceso de cambio de clave en la lista
-        if (validateForm()) {
-            ArrayList<Usuario> miListU = (ArrayList<Usuario>) ModelData.getInstance().getUsuarios();
-            boolean existeUsuario = false;
-            boolean existeClave = false;
-            Usuario miUsuarioModificable = new Usuario();
-            for (Usuario u : miListU) {//For que valida si el usario existe
-                if (u.getUsuario().equals(userNameR.getText().toString())) {//Si algun usuario es compatible con el usuairo ingresado
-                    miUsuarioModificable = u;
-                    if (miUsuarioModificable.getClave().equals(passwordR.getText().toString())) {
-                        passwordR.setError("The password can not be the same as the previous one");
-                        existeClave = true;
-                        //Toast.makeText(this,"The password can not be the same as the previous one", Toast.LENGTH_LONG).show();
-                    } else {
-                        miUsuarioModificable.setClave(passwordR.getText().toString());//Se asigna la nueva clave al usuario
-                        miListU.remove(u);
-                        miListU.add(miUsuarioModificable);
-                        existeUsuario = true;
-                        break;
-                    }
-                }
-            }
-
-            if (existeUsuario && existeClave == false) {//Si el usuario que se desea modificar fue encontrado
-                Toast.makeText(this, "Password successfully changed", Toast.LENGTH_LONG).show();
-                finish();
-            }else if(!existeUsuario && !existeClave){
-                Toast.makeText(this, "This username was not found!", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
 
     public boolean validateForm() {//Funcion para validar los campo del usuario nuevo
         int error = 0;
