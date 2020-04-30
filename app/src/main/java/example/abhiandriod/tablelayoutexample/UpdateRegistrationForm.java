@@ -118,6 +118,8 @@ public class UpdateRegistrationForm extends AppCompatActivity {
                 etAreaCodeU.setText(aux.getAreaCode());
                 etPhoneNumberU.setText(aux.getPhoneNumber());
                 etDatePickerU.setText(aux.getDate());
+                spinnerPU.setSelection(adaptador.getPosition(aux.getCountry()));
+                spinnerAPU.setSelection(adaptadorAP.getPosition(aux.getPosition()));
 
                 sentBtnU.setOnClickListener(new View.OnClickListener() {
                     @Override
